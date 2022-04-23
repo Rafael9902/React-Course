@@ -1,0 +1,17 @@
+* {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+  padding: 60px;
+}
+
+input {
+  width: 20rem;
+  font-size: 1.2rem;
+  border-color: salmon;
+}
+
+input:focus {
+  border-color: blue;
+}
