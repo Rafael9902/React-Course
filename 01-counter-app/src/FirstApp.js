@@ -14,8 +14,6 @@ const FirstApp = ({ greet, subtitle }) => {
         age: 22
     }
 
-
-
     return (
         <>
             {/* <pre>{ JSON.stringify(object, null, 3) }</pre> */}
