@@ -13,7 +13,6 @@ export const GiftExperApp = () => {
         <ol>
           {categories.map(category => <GifsGrid key={category} category={category}/>)}
         </ol>
-        <GifsGrid category={categories}/>
         {/* <ol>
           { categories.map((category, i) => <li key={category}>{category}</li>) }
         </ol> */}
