@@ -1,38 +1,19 @@
 import React, { useState, useEffect } from "react";
+import { getGifs } from "../../helpers/getGifs";
+import { useFetchGifs } from "../../hooks/useFetchGifs";
 import { GifGridItem } from "../gifGridItem/GifGridItem";
 
 //useEffect permite ejecutar codigo de manera condicional
 export const GifsGrid = ({ category }) => {
-
-    const [images, setImages] = useState([]);
-
-    useEffect(() => {
-        getGifs();
-    }, [])
-
-    const getGifs = async () => {
-        const url = 'https://api.giphy.com/v1/gifs/search?q=rick+and+morty&limit=10&api_key=7PupPL1O1qE1gzL4o5TnrYKVnQ4vHJaN';
-        const response = await fetch(url);
-        const { data } = await response.json();
-
-        const gifs = data.map(img => {
-            return {
-                id: img.id,
-                title: img.title,
-                url: img.images.downsized_medium.url
-            }
-        })
-
-        console.log(gifs);
-        setImages(gifs)
-    }
-
+    const { data: images, loading } = useFetchGifs(category);
 
     return (
         <>
-            <h3> {category} </h3>
-            <div className="card-grid">
+            <h3 className='animate__animated animate__fadeIn'> {category} </h3>
 
+            { loading && <p className='animate__animated animate__flash'>loading</p>}
+
+            <div className="card-grid">
                 {images.map(img => <GifGridItem key={img.id} {...img} />)}
             </div>
         </>
