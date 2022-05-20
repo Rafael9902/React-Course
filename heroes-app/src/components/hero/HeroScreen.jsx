@@ -1,7 +1,14 @@
-import React from 'react'
+import React from "react";
+import { useParams, Navigate } from "react-router-dom";
+import { getHeroesById } from "../../selectors/getHeroesById";
 
 export const HeroScreen = () => {
-  return (
-    <div>heroScreen</div>
-  )
-}
+  const { id } = useParams();
+  const hero = getHeroesById(id);
+
+  if(!hero) {
+    return <Navigate to='/' />;
+  }   
+
+  return <div>{hero.superhero}</div>;
+};
