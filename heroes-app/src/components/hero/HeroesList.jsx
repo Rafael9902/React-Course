@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { getHeroesByPublisher } from "../../selectors/getHeroesByPublisher";
 import { HeroCard } from "./HeroCard";
 
 export const HeroesList = ({ publisher }) => {
-  const heroes = getHeroesByPublisher(publisher);
+  const heroes = useMemo(() => getHeroesByPublisher(publisher), [publisher]);
+
   const validPublishers = ['DC Comics', 'Marvel Comics'];
 
   if(!validPublishers.includes(publisher)) {
