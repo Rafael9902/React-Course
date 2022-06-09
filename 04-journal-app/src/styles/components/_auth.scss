@@ -1,0 +1,86 @@
+.auth__main {
+    align-items: center;
+    background: $primary;
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    height: 100vh;
+    width: 100vw;
+}
+
+.auth__box-container {
+    background: white;
+    box-shadow: 0px 3px $dark-grey;
+    border-radius: 2px;
+    padding: 20px;
+    width: 250px;
+}
+
+.auth__title {
+    color: darken($color: $primary, $amount: 20); //sass function
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.auth__input {
+    color: $dark-grey;
+    border: 0px;
+    border-bottom: 1px solid $light-grey;
+    font-size: 16px;
+    margin-bottom: 20px;
+    height: 20px;
+    width: 100%;
+    transition: border-bottom .3s ease;
+
+    &:focus {
+        border-bottom: 1px solid $primary;
+        outline: none;
+    }
+}
+
+.auth__social-networks {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 20px 0 20px 0;
+    width: 100%;
+}
+
+.auth__alert-error {
+    background: red;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.auth__login-btn {
+    background: $primary;
+    color: white;
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    margin-inline: auto;
+}
+
+.auth__p-social {
+    font-weight: bold;
+}
+
+.google-btn {
+    display: flex;
+    margin: 20px 0;
+}
+
+.btn-text {
+    background: $primary;
+    color: white;
+    width: 100%;
+}
+
+.google-icon-wrapper {
+    border: 1px solid $dark-grey;
+}
