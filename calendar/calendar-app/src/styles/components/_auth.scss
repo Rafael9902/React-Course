@@ -1,0 +1,14 @@
+.auth__container {
+  background: $white;
+  display: flex;
+  height: 25rem;
+  justify-content: center;
+  margin: 14% auto;
+  width: 50rem;
+}
+
+.auth__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
