@@ -1,0 +1,17 @@
+.counter__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.counter__button {
+    background: cornflowerblue;
+    border: 1px cornflowerblue solid;
+    border-radius: 5px;
+    color: aliceblue;
+    font-weight: bold;
+    margin: 0 auto 15px;
+    width: 10%;
+}

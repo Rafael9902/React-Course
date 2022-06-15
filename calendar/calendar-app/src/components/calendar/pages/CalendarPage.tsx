@@ -18,7 +18,28 @@ export const CalendarPage = () => {
     }
   }]
 
+  const onDoubleClick = ( event: any ) => {
+    console.log(event);
+  }
+
+  const onSelect = ( event: any ) => {
+    console.log(event);
+  }
+
+
+  const onViewVhange = ( event: any ) => {
+    console.log(event);
+  }
+
+
+
   const eventStyleGetter = ( event: any, start: any, end: any, isSelected: any ) => {
+    const style = {
+      backgroundColor: 'salmon',
+      borderRadius: '0px',
+      opacity: 0.8,
+      color: 'white'
+    }
     
   }
 
@@ -35,7 +56,7 @@ export const CalendarPage = () => {
       endAccessor="end"
       style={{ height: 500 }}
       messages={ getMessages() }
-      eventPropGetter={ eventStyleGetter }
+      onDoubleClickEvent={ onDoubleClick }
     />
     </>
   )
