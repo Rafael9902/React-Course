@@ -15,5 +15,5 @@ export const CounterWithCustomHook = () => {
         -1
       </button>
     </section>
-  );
+  )
 };
