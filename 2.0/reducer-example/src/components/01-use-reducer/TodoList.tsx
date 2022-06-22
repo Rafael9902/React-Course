@@ -7,9 +7,8 @@ export const TodoList = ({ todos = [] }: any) => {
   return (
     <ul className="list-group">
       {todos.map((todo: Todo) => (
-        //TodoItem
         <TodoItem {...todo} key={todo.id}/>
       ))}
-    </ul> 
+    </ul>
   );
 };

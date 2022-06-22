@@ -34,7 +34,7 @@ export const TodoApp = () => {
         <div className="col-5">
           <h4>Add TODO</h4>
           <hr />
-          <TodoAdd />
+          <TodoAdd onNewTodo={} />
         </div>
       </div>
     </>
