@@ -1,0 +1,15 @@
+.btn {
+    background: transparent;
+    color: white;
+    border: 0;
+    cursor: pointer;
+    transition: color .3 ease;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        color: darken($color: white, $amount: 10);
+    }
+}
