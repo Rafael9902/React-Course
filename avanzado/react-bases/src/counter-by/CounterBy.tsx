@@ -2,12 +2,10 @@ import { useState } from "react";
 import {CounterProps} from "./counter-by-props.interface";
 
 export const CounterBy = ({ initialValue = 5 }: CounterProps) => {
-    const [counterState , setCounterState] = useState({
+    const [{ counter, clicks }, setCounterState] = useState({
         counter: initialValue,
         clicks: 0
     });
-
-    const { counter, clicks } = counterState;
 
     const handleClick = (factor: number) => {
         setCounterState(({counter, clicks}) => ({
