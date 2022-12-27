@@ -1,5 +1,6 @@
 import { BrowserRouter, Navigate, NavLink, Route, Routes } from "react-router-dom"
 import reactLogo from '../assets/react.svg'
+import { ROUTES } from "./routes"
 
 export const Navigation = () => {
     return (
@@ -10,25 +11,28 @@ export const Navigation = () => {
                         <img src={reactLogo} alt='React Logo'></img>
 
                         <ul>
-                            <li>
-                                <NavLink to='/' className={({isActive}) => isActive ? 'nav-active' : ''}>Home</NavLink>
-                            </li>
-
-                            <li>
-                                <NavLink to='/about' className={({isActive}) => isActive ? 'nav-active' : ''}>About</NavLink>
-                            </li>
-
-                            <li>
-                                <NavLink to='/users' className={({isActive}) => isActive ? 'nav-active' : ''}>Users</NavLink>
-                            </li>
-                        </ul>
+                            {
+                                ROUTES.map(({to, name}) => (
+                                    <li key={to}>
+                                        <NavLink 
+                                            to={to}
+                                            className={({isActive}) => isActive ? 'nav-active' : ''}
+                                        >{ name }</NavLink>
+                                    </li>
+                                ))
+                            }
+                       </ul>
                     </nav>
 
                     <Routes>
-                        <Route path='about' element={<h1>About Page</h1>}/>
-                        <Route path='users' element={<h1>Users Page</h1>}/>
-                        <Route path='' element={<h1>Home Page</h1>}/>
-                        <Route path='/*' element={ <Navigate to='' replace/> }/>
+                        { ROUTES.map(({to, path, Component}) => (
+                            <Route
+                                key={to}
+                                path={path} 
+                                element={ <Component /> }/>
+                        ))}
+
+                        <Route path="/*" element={ <Navigate to={ROUTES[0].to}/>}/>
                     </Routes>
                 </div>
             </BrowserRouter>
